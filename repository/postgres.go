@@ -119,9 +119,9 @@ func (r *PostgresTicketRepo) GetOrderStatus(ctx context.Context, token string) (
 		token).Scan(&status)
 	if err != nil {
 		if errors.Is(err, pgx.ErrNoRows) {
-			return "", nil
+			return "", domain.ErrOrderNotFound
 		}
-		return "", nil
+		return "", err
 	}
 	return domain.OrderStatus(status), nil
 }

@@ -63,7 +63,7 @@ func (h *HTTPHandler) GetOrderStatus(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("Coontent-Type", "application/json")
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]interface{}{
 		"order_token": token,
 		"status":      status,

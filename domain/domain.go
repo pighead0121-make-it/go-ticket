@@ -10,6 +10,7 @@ import (
 var (
 	ErrOutOfStock     = errors.New("out of stock")
 	ErrTicketNotFound = errors.New("ticket not found")
+	ErrOrderNotFound  = errors.New("order not found")
 )
 
 // Entities
